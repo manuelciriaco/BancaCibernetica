@@ -7,7 +7,6 @@ public class Sistema {
 	 */
 	public static void main(String[] args) {
 		
-		//Este es el metodo main
 
 	}
 
