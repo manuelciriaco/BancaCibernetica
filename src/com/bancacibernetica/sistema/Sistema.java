@@ -9,7 +9,7 @@ public class Sistema {
 	 */
 	public static void main(String[] args) {
 		
-		VentanaAdministrador ventana = VentanaAdministrador.getInstancia();
+		VentanaAdministrador.getInstancia();
 
 	}
 

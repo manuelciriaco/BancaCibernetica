@@ -8,7 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.Icon;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -16,6 +15,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class VentanaAdministrador extends JFrame {
 
@@ -37,10 +37,11 @@ public class VentanaAdministrador extends JFrame {
 
 	/*Constructor privado, evitamos que accedan a el*/
 	private VentanaAdministrador() {
+		setResizable(false);
 		setTitle("Usuario administrador - Bienvenido -nombreDeUsuario-");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdministrador.class.getResource("/imagenes/047.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 585, 541);
+		setBounds(100, 100, 578, 541);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -104,7 +105,7 @@ public class VentanaAdministrador extends JFrame {
 		contentPane.add(btnSalir);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 569, 26);
+		menuBar.setBounds(0, 0, 579, 26);
 		contentPane.add(menuBar);
 		
 		JMenu mnVistas = new JMenu("Vistas");
@@ -121,8 +122,14 @@ public class VentanaAdministrador extends JFrame {
 		mnInfo.add(mntmAcercaDe);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 482, 569, 21);
+		panel.setBounds(0, 492, 569, 21);
 		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Banca Cibernetica v.1 Todos los derechos reservados 2013.");
+		lblNewLabel.setBounds(0, 0, 569, 21);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		panel.add(lblNewLabel);
 		
 		JLabel lblMantenimientoDeUsuarios = new JLabel("Mantenimiento de usuarios.");
 		lblMantenimientoDeUsuarios.setFont(new Font("Verdana", Font.PLAIN, 15));
