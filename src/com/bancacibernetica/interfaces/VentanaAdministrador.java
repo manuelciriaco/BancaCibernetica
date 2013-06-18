@@ -14,6 +14,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaAdministrador extends JFrame {
 
@@ -33,7 +35,7 @@ public class VentanaAdministrador extends JFrame {
 		return ventanaAdmin;
 	}
 
-	
+	/*Constructor privado, evitamos que accedan a el*/
 	private VentanaAdministrador() {
 		setTitle("Usuario administrador - Bienvenido -nombreDeUsuario-");
 		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdministrador.class.getResource("/imagenes/047.png")));
@@ -89,6 +91,12 @@ public class VentanaAdministrador extends JFrame {
 		
 		ImageIcon img6 = new ImageIcon("C:\\imagenes\\028 (4).png");
 		JButton btnSalir = new JButton(img6);
+		btnSalir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/*Saliendo del sistema*/
+				System.exit(0);
+			}
+		});
 		btnSalir.setToolTipText("Pago a ganadores.");
 		btnSalir.setForeground(Color.WHITE);
 		btnSalir.setBackground(Color.WHITE);
