@@ -1,5 +1,7 @@
 package com.bancacibernetica.sistema;
 
+import com.bancacibernetica.interfaces.VentanaAdministrador;
+
 public class Sistema {
 
 	/**
@@ -7,7 +9,7 @@ public class Sistema {
 	 */
 	public static void main(String[] args) {
 		
-		//Este es el metodo main
+		VentanaAdministrador ventana = VentanaAdministrador.getInstancia();
 
 	}
 
