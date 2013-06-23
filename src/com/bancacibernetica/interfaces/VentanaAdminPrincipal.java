@@ -17,29 +17,29 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 
-public class VentanaAdministrador extends JFrame {
+public class VentanaAdminPrincipal extends JFrame {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private static VentanaAdministrador ventanaAdmin = null;
+	private static VentanaAdminPrincipal ventanaAdmin = null;
 	
 	/*Creamos una unica instancia para la clase VentanaAdministrador*/
-	public static synchronized VentanaAdministrador getInstancia(){
+	public static synchronized VentanaAdminPrincipal getInstancia(){
 		if (ventanaAdmin == null) {
-			ventanaAdmin = new VentanaAdministrador();
+			ventanaAdmin = new VentanaAdminPrincipal();
 			ventanaAdmin.setVisible(true);
 		}
 		return ventanaAdmin;
 	}
 
 	/*Constructor privado, evitamos que accedan a el*/
-	private VentanaAdministrador() {
+	private VentanaAdminPrincipal() {
 		setResizable(false);
 		setTitle("Usuario administrador - Bienvenido -nombreDeUsuario-");
-		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdministrador.class.getResource("/imagenes/047.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(VentanaAdminPrincipal.class.getResource("/imagenes/047.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 578, 541);
 		contentPane = new JPanel();
@@ -60,6 +60,14 @@ public class VentanaAdministrador extends JFrame {
 		
 		ImageIcon img2 = new ImageIcon("C:\\imagenes\\006 (5).png");
 		JButton btnPrecios = new JButton(img2);
+		
+		btnPrecios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/*Llamando la ventana administradora de precios */
+				VentanaAdminPrecios.getInstancia();
+			}
+		});
+		
 		btnPrecios.setToolTipText("Mantenimiento de precios.");
 		btnPrecios.setForeground(Color.WHITE);
 		btnPrecios.setBackground(Color.WHITE);

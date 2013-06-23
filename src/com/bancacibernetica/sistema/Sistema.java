@@ -1,6 +1,6 @@
 package com.bancacibernetica.sistema;
 
-import com.bancacibernetica.interfaces.VentanaAdministrador;
+import com.bancacibernetica.interfaces.VentanaAdminPrincipal;
 
 public class Sistema {
 
@@ -9,7 +9,7 @@ public class Sistema {
 	 */
 	public static void main(String[] args) {
 		
-		VentanaAdministrador.getInstancia();
+		VentanaAdminPrincipal.getInstancia();
 
 	}
 
