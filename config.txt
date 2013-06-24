@@ -1,0 +1,6 @@
+localhost
+bancacibernetica
+root
+
+test
+
